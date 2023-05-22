@@ -1,0 +1,59 @@
+@model Student
+<div>
+    <form asp-action="AddStudent" class="validate-form">
+    <div>
+        <label>Id</label>
+        <input type="number" name="Id"/>
+    </div>
+    <div class="validate-input">
+        <label>FirstName</label>
+        <input type="text" name="FirstName" asp-for="FirstName"/>
+        <br/>
+        <span asp-validation-for="FirstName" style="color: red"></span>
+    </div>
+    <div>
+        <label>LastName</label>
+        <input type="text" asp-for="LastName"/>
+        <br/>
+        <span asp-validation-for="LastName" style="color: red"></span>
+    </div>
+    <div>
+        <label>MatricNumber</label>
+        <input type="text" asp-for="MatricNumber"/>
+        <br/>
+        <span asp-validation-for="MatricNumber" style="color: red"></span>
+    </div>
+    <div>
+        <label>Department</label>
+        <input type="text" asp-for="Department"/>
+        <br/>
+        <span asp-validation-for="Department" style="color: red"></span>
+    </div>
+    <div>
+        <label>Gender</label>
+        <input type="text" asp-for="Gender"/>
+        <br/>
+        <span asp-validation-for="Gender" style="color: red"></span>
+    </div>
+    <div>
+        <label>School</label>
+        <input type="text" asp-for="School"/>
+        <br/>
+        <span asp-validation-for="School" style="color: red"></span>
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number" asp-for="Age"/>
+        <br/>
+        <span asp-validation-for="Age" style="color: red"></span>
+    </div>
+    <div>
+        <input type="submit" name="Submit"/>
+    </div>
+    </form>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+@model Student
+<div>
+    <form asp-action="UpdateStudent">
+    <div>
+        <label>Id</label>
+        <input type="number" name="Id" value="@Model.Id"/>
+    </div>
+    <div>
+        <label>FirstName</label>
+        <input type="text" name="FirstName" value="@Model.FirstName"/>
+    </div>
+    <div>
+        <label>LastName</label>
+        <input type="text" name="LastName" value="@Model.LastName"/>
+    </div>
+    <div>
+        <label>MatricNumber</label>
+        <input type="text" name="MatricNumber" value="@Model.MatricNumber"/>
+    </div>
+    <div>
+        <label>Department</label>
+        <input type="text" name="Department" value="@Model.Department"/>
+    </div>
+    <div>
+        <label>Gender</label>
+        <input type="text" name="Gender" value="@Model.Gender"/>
+    </div>
+    <div>
+        <label>School</label>
+        <input type="text" name="School" value="@Model.School"/>
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="text" name="Age" value="@Model.Age"/>
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+    </form>
+</div>

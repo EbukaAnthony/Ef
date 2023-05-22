@@ -1,0 +1,83 @@
+@model IEnumerable<Student>
+    <div>
+        <partial name="_Come"/>
+        @await Html.PartialAsync("/Views/Partial/_Show.cshtml",Model)
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        FirstName
+                    </th>
+                    <th>
+                        LastName
+                    </th>
+                    <th>
+                        MatricNumber
+                    </th>
+                    <th>
+                        Department
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        School
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        View
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <th>
+                            @student.Id
+                        </th>
+                        <th>
+                            @student.FirstName
+                        </th>
+                        <th>
+                            @student.LastName
+                        </th>
+                        <th>
+                            @student.MatricNumber
+                        </th>
+                        <th>
+                            @student.Department
+                        </th>
+                        <th>
+                            @student.Gender
+                        </th>
+                        <th>
+                            @student.School
+                        </th>
+                        <th>
+                            @student.Age
+                        </th>
+                        <th>
+                            <a asp-action="GetStudent" asp-controller="Books" asp-route-Id="@student.Id">View</a>
+                        </th>
+                        <th>
+                            <a asp-action="UpdateStudent" asp-controller="Books" asp-route-Id="@student.Id">Update</a>
+                        </th>
+                        <th>
+                            <a asp-action="DeleteStudent" asp-controllers="Books" asp-route-Id="@student.Id">Delete</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a type="button" asp-action="AddStudent" asp-controller="Books">
+            Add new student
+        </a>
+    </div>
